@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article class="page">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}
+      <div class="page-intro">{{ . }}</div>
+    {{ end }}
+  </header>
+
+  <section class="post-list">
+    {{ $posts := where .Pages "Params.excludeFromFeed" "ne" true }}
+    {{ $paginator := .Paginate $posts }}
+    {{ range $paginator.Pages }}
+      {{- partial "post-card.html" . -}}
+    {{ end }}
+  </section>
+
+  {{ if gt .Paginator.TotalPages 1 }}
+  {{ template "_internal/pagination.html" . }}
+  {{ end }}
+</article>
+{{ end }}

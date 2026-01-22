@@ -1,0 +1,59 @@
+baseURL = "https://roelvanderven.com/"
+languageCode = "en-us"
+title = "Roel van der Ven"
+theme = "roelvanderven"
+
+# Performance settings
+enableEmoji = false
+enableGitInfo = false
+
+# URL structure
+[permalinks]
+  posts = "/posts/:slug/"
+  stills = "/stills/:slug/"
+  photos = "/photos/:slug/"
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+
+# Pagination
+[pagination]
+  pagerSize = 10
+
+# Markup settings
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Allow raw HTML
+    [markup.goldmark.extensions]
+      typographer = true
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+    codeFences = true
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss+xml"
+    baseName = "feed"
+
+# Site parameters
+[params]
+  description = "Personal website of Roel van der Ven - Product Manager, technologist, and bread baker."
+  author = "Roel van der Ven"
+
+  # Social links
+  mastodon = "https://social.lol/@roel"
+  github = "https://github.com/roelven"
+  linkedin = "https://linkedin.com/in/roelvanderven"
+
+  # Content settings
+  maxHomeItems = 10

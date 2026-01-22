@@ -1,0 +1,14 @@
+<article class="cameo-card">
+  <h3 class="cameo-card-title">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h3>
+  <div class="cameo-card-meta">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+    {{ with .Params.source_name }}
+    · Source: {{ . }}
+    {{ end }}
+  </div>
+  <div class="cameo-content">
+    {{ .Content }}
+  </div>
+</article>

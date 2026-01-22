@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="page">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    <div class="page-intro">All tags across the site.</div>
+  </header>
+
+  <div class="tag-cloud">
+    {{ range .Data.Terms.Alphabetical }}
+      <span class="tag-item">
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> ({{ .Count }})
+      </span>
+    {{ end }}
+  </div>
+</article>
+{{ end }}

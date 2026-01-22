@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  roelvanderven-website:
+    image: nginx:alpine
+    container_name: roelvanderven-website
+    volumes:
+      - /docker/volumes/roelvanderven.com/public:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "8095:80"
+    restart: unless-stopped
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"

@@ -1,0 +1,36 @@
+{{ define "main" }}
+<article class="post">
+  {{ with .Params.image }}
+  <div class="post-header-image">
+    <img src="{{ . }}" alt="{{ $.Title }}">
+  </div>
+  {{ end }}
+
+  <header class="post-header">
+    <h1>{{ .Title }}</h1>
+    {{ if not .Params.hideMeta }}
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ with .Params.tags }}
+      <span class="post-tags">
+        {{ range $index, $tag := . }}{{ if $index }}, {{ end }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a>{{ end }}
+      </span>
+      {{ end }}
+      {{ if .ReadingTime }}
+      <span class="reading-time">{{ .ReadingTime }} min read</span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  {{ with .Params.mastodon_url }}
+  <div class="mastodon-link">
+    <a href="{{ . }}" class="external-link">Discuss on Mastodon →</a>
+  </div>
+  {{ end }}
+</article>
+{{ end }}

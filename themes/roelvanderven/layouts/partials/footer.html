@@ -1,0 +1,10 @@
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; {{ now.Year }} {{ .Site.Params.author }}</p>
+    <nav class="footer-nav">
+      {{ with .Site.Params.mastodon }}<a href="{{ . }}" rel="me">Mastodon</a>{{ end }}
+      {{ with .Site.Params.github }}<a href="{{ . }}">GitHub</a>{{ end }}
+      {{ with .Site.Params.linkedin }}<a href="{{ . }}">LinkedIn</a>{{ end }}
+    </nav>
+  </div>
+</footer>

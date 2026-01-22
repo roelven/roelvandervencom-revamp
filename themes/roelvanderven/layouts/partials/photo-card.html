@@ -1,0 +1,13 @@
+<article class="photo-card">
+  <a href="{{ .RelPermalink }}">
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="{{ $.Title }}" class="photo-card-thumbnail">
+    {{ end }}
+  </a>
+  <h3 class="photo-card-title">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h3>
+  <div class="photo-card-meta">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+  </div>
+</article>

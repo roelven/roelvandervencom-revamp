@@ -1,0 +1,31 @@
+{{ define "main" }}
+<section class="intro">
+  {{ with .Content }}
+    {{ . }}
+  {{ else }}
+    <p>{{ .Site.Params.description }}</p>
+  {{ end }}
+</section>
+
+<section class="recent-posts">
+  <h2>Recent</h2>
+  {{ $posts := where .Site.RegularPages "Section" "ne" "" }}
+  {{ $posts = where $posts "Params.excludeFromFeed" "ne" true }}
+  {{ $paginator := .Paginate $posts }}
+  {{ range $paginator.Pages }}
+    {{ if eq .Section "stills" }}
+      {{- partial "still-card.html" . -}}
+    {{ else if and (eq .Section "photos") (eq .Params.type "cameo") }}
+      {{- partial "cameo-card.html" . -}}
+    {{ else if eq .Section "photos" }}
+      {{- partial "photo-card.html" . -}}
+    {{ else }}
+      {{- partial "post-card.html" . -}}
+    {{ end }}
+  {{ end }}
+
+  {{ if gt $paginator.TotalPages 1 }}
+  {{ template "_internal/pagination.html" . }}
+  {{ end }}
+</section>
+{{ end }}

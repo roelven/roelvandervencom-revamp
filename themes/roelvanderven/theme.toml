@@ -1,0 +1,9 @@
+name = "roelvanderven"
+license = "MIT"
+description = "Custom minimal theme for roelvanderven.com"
+homepage = "https://roelvanderven.com"
+min_version = "0.120.0"
+
+[author]
+  name = "Roel van der Ven"
+  homepage = "https://roelvanderven.com"
