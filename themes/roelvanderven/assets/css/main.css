@@ -618,6 +618,36 @@ pre code {
   margin-bottom: var(--space-xl);
 }
 
+.still-content img {
+  width: 80%;
+  max-width: 80vw;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: var(--space-xl) auto;
+
+  /* Break out of container */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: calc(-40vw);
+  margin-right: calc(-40vw);
+}
+
+.still-content p {
+  margin: var(--space-md) 0;
+}
+
+@media (max-width: 640px) {
+  .still-content img {
+    width: 95%;
+    max-width: 95vw;
+    margin-left: calc(-47.5vw);
+    margin-right: calc(-47.5vw);
+  }
+}
+
 .still-source {
   margin-top: var(--space-lg);
   padding-top: var(--space-lg);
