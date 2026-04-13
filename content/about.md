@@ -3,32 +3,32 @@ title: "About"
 hideMeta: true
 ---
 
-I'm Roel van der Ven, a Senior Product Manager at Spotify with 20+ years of experience building products across media, music, and platform technology.
+I'm Roel van der Ven. I build products, tinker with systems, and try to understand how things connect.
+
 
 ## Professional Background
 
-My career has focused on zero-to-one product initiatives and creator/platform ecosystems. At Spotify, I've worked on initiatives like Spotify for Authors and Spotify Open Access, helping build the infrastructure that connects creators with audiences.
+For the past 20+ years I've worked across media, music, and platform technology. Currently I'm a Senior Product Manager at Spotify, where I work on consumer authorization and platform AI. Before that, I spent formative years at SoundCloud and tape.tv in Berlin's music-tech scene. The thread through all of it seems to be helping creators and audiences find each other through well-designed infrastructure.
 
-Before Spotify, I worked at:
-- **SoundCloud** - Building creator tools and platform features
-- **tape.tv** - Product leadership in music video streaming
-- Various roles across media and technology companies
+At Spotify, I've spent seven years leading zero-to-one initiatives in areas where the problem space is ambiguous and the systems are complex. I launched Spotify for Authors, Spotify's first dedicated portal for the audiobook publishing community, taking it from business case to production. Before that, I built Spotify Open Access, the content authorization technology that lets membership platforms grant their subscribers access to premium content on Spotify (the system behind partnerships like Calm). That work resulted in integrations with 17+ external platforms and a patent filing for the underlying technology. I also bootstrapped Spotify for Music Providers, a self-service portal now used by 5,000+ music industry professionals, and led the metadata platform consolidation that unified three legacy systems into a single foundation powering 20,000+ downstream data endpoints.
 
-## Technical Interests
+Before that, I co-organized Music & Bits, a conference and hackathon that bridged the web and music industries, which eventually merged with Amsterdam Dance Event. I also taught product management at General Assembly and was an intern at Last.fm (acquired by CBS during my time there). I started my career building one of the first cross-media strategies for Bright Magazine, bringing print content to web and TV.
 
-I maintain a homelab where I self-host services using Docker and experiment with home automation through Home Assistant. I believe in owning your infrastructure and data, which is why this site is self-hosted on my homelab.
+I approach problems from first principles. My background is in full-stack engineering, which means I think in systems, feedback loops, and tradeoffs before I think in roadmaps. Our current thinking on what "good product work" looks like keeps evolving, and I try to evolve with it. 
 
-## Personal Interests
 
-Beyond work, I'm passionate about:
-- **Bread baking** - Especially sourdough, which I've been perfecting for years
-- **Cooking** - Vegetarian cuisine and exploring new techniques
-- **Music discovery** - Always searching for new sounds
-- **Sustainable living** - We live near Berlin in a passive house with solar panels
+## Personal
+
+My family and I are Dutch, living in the Berlin area with two kids and two cats. I'm vegetarian and I love running. If you haven't guessed, I'm pretty crazy about discovering new and old music, it's a constant thread throughout the week. Ask me what I'm listening to!
+
+I self-host most of the digital infrastructure I depend on. A homelab running Proxmox, Docker, Home Assistant, and too many side projects teaches you a lot about the systems you usually take for granted. This website is part of that same impulse: own your content, own your tools, observe what happens when you do.
+
+When I'm not working or tinkering with my infrastructure, I'm likely baking sourdough, exploring some new cooking technique, or on a run in the woods. If any of this resonates, say hi. The best conversations tend to start with a shared curiosity.
+
 
 ## Get in Touch
 
 - **Mastodon**: [@roel@social.lol](https://social.lol/@roel)
 - **LinkedIn**: [roelvanderven](https://linkedin.com/in/roelvanderven)
 - **GitHub**: [roelven](https://github.com/roelven)
-- **Email**: hello@roelvanderven.com
+
