@@ -18,4 +18,6 @@ Look at this shot!
 
 ![A visualization of the underground lab](/images/stills/andromeda-strain-3.png)
 
-And: the diagrams and visuals, amazing. 
+And: the diagrams and visuals hold up nicely even 30+ years later. 
+
+![Camera shot](/images/stills/andromeda-strain-4.png)
