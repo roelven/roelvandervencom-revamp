@@ -307,6 +307,15 @@ a[href^="http"]:not([href*="roelvanderven.com"])::after {
   margin: var(--space-lg) 0;
 }
 
+.post-content .about-avatar {
+  float: right;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: -60px 10px var(--space-md) 40px;
+  border-radius: 100px;
+}
+
 .post-content ul,
 .post-content ol {
   margin: 0 0 var(--space-md);

@@ -3,6 +3,8 @@ title: "About"
 hideMeta: true
 ---
 
+<img src="https://img.roelven.com/avatar-30scomic-roel-web-20260413-QvRwO.jpg" alt="Roel van der Ven" class="about-avatar">
+
 I'm Roel van der Ven. I build products, tinker with systems, and try to understand how things connect.
 
 
