@@ -3,6 +3,15 @@
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Fediverse -->
+<meta name="fediverse:creator" content="@roel@social.lol">
+{{ with .Site.Params.mastodon }}<link rel="me" href="{{ . }}">{{ end }}
+{{ with .Site.Params.github }}<link rel="me" href="{{ . }}">{{ end }}
+{{ with .Site.Params.linkedin }}<link rel="me" href="{{ . }}">{{ end }}
+
 <!-- Open Graph -->
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
@@ -21,6 +30,9 @@
 
 <!-- Analytics -->
 <script defer src="https://u.w22.io/script.js" data-website-id="ea82e6d0-c79d-4f73-97f9-801bbdd6e09f"></script>
+
+<!-- Structured Data -->
+{{- partial "schema.html" . -}}
 
 <!-- CSS -->
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}

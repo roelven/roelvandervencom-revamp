@@ -1,0 +1,54 @@
+{{/* WebSite + Person schema on every page */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": {{ .Site.Title }},
+      "url": {{ .Site.BaseURL }},
+      "description": {{ .Site.Params.description }},
+      "author": {
+        "@id": {{ print .Site.BaseURL "#person" }}
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": {{ print .Site.BaseURL "#person" }},
+      "name": {{ .Site.Params.author }},
+      "url": {{ .Site.BaseURL }}
+      {{- with .Site.Params.mastodon }},
+      "sameAs": [
+        {{ . }},
+        {{ $.Site.Params.github }},
+        {{ $.Site.Params.linkedin }}
+      ]
+      {{- end }}
+    }
+    {{- if and .IsPage (eq .Section "posts") }},
+    {
+      "@type": "BlogPosting",
+      "headline": {{ .Title }},
+      "url": {{ .Permalink }},
+      "datePublished": {{ .Date.Format "2006-01-02" }},
+      {{- with .Lastmod }}
+      "dateModified": {{ .Format "2006-01-02" }},
+      {{- end }}
+      {{- with .Description }}
+      "description": {{ . }},
+      {{- end }}
+      {{- with .Params.tags }}
+      "keywords": {{ . }},
+      {{- end }}
+      "author": {
+        "@id": {{ print $.Site.BaseURL "#person" }}
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ $.Permalink }}
+      }
+    }
+    {{- end }}
+  ]
+}
+</script>

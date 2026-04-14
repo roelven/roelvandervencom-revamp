@@ -1,0 +1,42 @@
+{{- $about := site.GetPage "/about" -}}
+# {{ .Site.Title }}
+
+> {{ .Site.Params.description }}
+
+{{ with $about }}{{ .RawContent | replaceRE `<[^>]+>` "" | replaceRE `\n{3,}` "\n\n" | strings.TrimSpace }}{{ end }}
+
+## Site Sections
+
+{{ $posts := where .Site.RegularPages "Section" "posts" -}}
+{{ $stills := where .Site.RegularPages "Section" "stills" -}}
+{{ $photos := where .Site.RegularPages "Section" "photos" -}}
+- [Posts]({{ "posts/" | absURL }}) ({{ len $posts }} articles): Blog posts on product management, technology, and personal reflections.
+- [Stills]({{ "stills/" | absURL }}) ({{ len $stills }} entries): Curated movie and TV screenshots.
+- [Photos]({{ "photos/" | absURL }}) ({{ len $photos }} entries): Photography and personal photos.
+
+## All Posts
+
+{{ range $posts.ByDate.Reverse }}
+### {{ .Title }}
+
+- **URL**: {{ .Permalink }}
+- **Date**: {{ .Date.Format "2006-01-02" }}
+{{- with .Params.tags }}
+- **Tags**: {{ delimit . ", " }}
+{{- end }}
+
+{{ .RawContent | replaceRE `<[^>]+>` "" | replaceRE `\{\{<[^>]+>\}\}` "" | replaceRE `\n{3,}` "\n\n" | strings.TrimSpace }}
+
+---
+{{ end }}
+
+## Tags
+
+{{ range .Site.Taxonomies.tags -}}
+- {{ .Page.Title }} ({{ .Count }})
+{{ end }}
+
+## Key Links
+
+- [About]({{ "about/" | absURL }})
+- [RSS Feed]({{ "feed.xml" | absURL }})

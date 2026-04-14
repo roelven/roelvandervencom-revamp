@@ -35,7 +35,7 @@ enableGitInfo = false
 
 # Output formats
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "LLMsTxt", "LLMsFullTxt"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML"]
   term = ["HTML"]
@@ -44,6 +44,16 @@ enableGitInfo = false
   [outputFormats.RSS]
     mediatype = "application/rss+xml"
     baseName = "feed"
+  [outputFormats.LLMsTxt]
+    mediatype = "text/plain"
+    baseName = "llms"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.LLMsFullTxt]
+    mediatype = "text/plain"
+    baseName = "llms-full"
+    isPlainText = true
+    notAlternative = true
 
 # Site parameters
 [params]
