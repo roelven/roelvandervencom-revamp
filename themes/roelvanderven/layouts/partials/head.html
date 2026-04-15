@@ -17,13 +17,13 @@
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-{{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{ with .Params.image }}{{ $ogPath := strings.TrimPrefix "/" . }}{{ with resources.Get $ogPath }}{{ $ogImg := .Resize "1200x webp" }}<meta property="og:image" content="{{ $ogImg.Permalink }}">{{ else }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}{{ end }}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary{{ if .Params.image }}_large_image{{ end }}">
 <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-{{ with .Params.image }}<meta name="twitter:image" content="{{ . | absURL }}">{{ end }}
+{{ with .Params.image }}{{ $twPath := strings.TrimPrefix "/" . }}{{ with resources.Get $twPath }}{{ $twImg := .Resize "1200x webp" }}<meta name="twitter:image" content="{{ $twImg.Permalink }}">{{ else }}<meta name="twitter:image" content="{{ . | absURL }}">{{ end }}{{ end }}
 
 <!-- RSS -->
 <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "feed.xml" | absURL }}">

@@ -12,7 +12,7 @@
   </div>
   <a href="{{ .RelPermalink }}" class="still-card-image-link">
     {{ with .Params.image }}
-    <img src="{{ . }}" alt="{{ $.Title }}" class="still-card-image">
+    {{- partial "image-processed.html" (dict "src" . "alt" $.Title "class" "still-card-image" "sizes" "(min-width: 680px) 680px, 100vw" "widths" (slice 480 768)) -}}
     {{ end }}
   </a>
 </article>

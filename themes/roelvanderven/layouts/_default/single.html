@@ -2,7 +2,7 @@
 <article class="post">
   {{ with .Params.image }}
   <div class="post-header-image">
-    <img src="{{ . }}" alt="{{ $.Title }}">
+    {{- partial "image-processed.html" (dict "src" . "alt" $.Title "loading" "eager" "sizes" "(min-width: 680px) 680px, 100vw") -}}
   </div>
   {{ end }}
 

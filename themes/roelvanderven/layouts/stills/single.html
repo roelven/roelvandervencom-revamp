@@ -14,7 +14,7 @@
 
   {{ with .Params.image }}
   <div class="still-image-container">
-    <img src="{{ . }}" alt="{{ $.Title }}" class="still-image">
+    {{- partial "image-processed.html" (dict "src" . "alt" $.Title "class" "still-image" "loading" "eager" "sizes" "80vw") -}}
   </div>
   {{ end }}
 
