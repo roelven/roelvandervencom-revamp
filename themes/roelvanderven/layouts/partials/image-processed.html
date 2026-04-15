@@ -1,0 +1,53 @@
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $sizes := .sizes | default "100vw" -}}
+{{- $widths := .widths | default (slice 480 768 1200) -}}
+
+{{- $path := strings.TrimPrefix "/" $src -}}
+{{- $img := resources.Get $path -}}
+
+{{- if $img -}}
+  {{- $origWidth := $img.Width -}}
+  {{- $origHeight := $img.Height -}}
+
+  {{/* Build WebP srcset */}}
+  {{- $webpSet := slice -}}
+  {{- range $w := $widths -}}
+    {{- if le $w $origWidth -}}
+      {{- $resized := $img.Resize (printf "%dx webp" $w) -}}
+      {{- $webpSet = $webpSet | append (printf "%s %dw" $resized.RelPermalink $w) -}}
+    {{- end -}}
+  {{- end -}}
+  {{/* Add original width as largest option */}}
+  {{- $webpFull := $img.Resize (printf "%dx webp" $origWidth) -}}
+  {{- $webpSet = $webpSet | append (printf "%s %dw" $webpFull.RelPermalink $origWidth) -}}
+
+  {{/* Build original format srcset */}}
+  {{- $origSet := slice -}}
+  {{- range $w := $widths -}}
+    {{- if le $w $origWidth -}}
+      {{- $resized := $img.Resize (printf "%dx" $w) -}}
+      {{- $origSet = $origSet | append (printf "%s %dw" $resized.RelPermalink $w) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $origSet = $origSet | append (printf "%s %dw" $img.RelPermalink $origWidth) -}}
+
+  <picture>
+    <source type="image/webp" srcset="{{ delimit $webpSet ", " }}" sizes="{{ $sizes }}">
+    <img
+      src="{{ $img.RelPermalink }}"
+      srcset="{{ delimit $origSet ", " }}"
+      sizes="{{ $sizes }}"
+      alt="{{ $alt }}"
+      width="{{ $origWidth }}"
+      height="{{ $origHeight }}"
+      loading="{{ $loading }}"
+      decoding="async"
+      {{- with $class }} class="{{ . }}"{{ end -}}
+    >
+  </picture>
+{{- else -}}
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async"{{ with $class }} class="{{ . }}"{{ end }}>
+{{- end -}}

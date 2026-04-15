@@ -1,0 +1,5 @@
+{{- if or (hasPrefix .Destination "http://") (hasPrefix .Destination "https://") -}}
+  <img src="{{ .Destination }}" alt="{{ .Text }}" loading="lazy" decoding="async">
+{{- else -}}
+  {{- partial "image-processed.html" (dict "src" .Destination "alt" .Text) -}}
+{{- end -}}

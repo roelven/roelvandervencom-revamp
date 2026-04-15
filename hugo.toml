@@ -67,3 +67,7 @@ enableGitInfo = false
 
   # Content settings
   maxHomeItems = 10
+
+[imaging]
+  quality = 80
+  resampleFilter = "Lanczos"

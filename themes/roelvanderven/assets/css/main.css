@@ -447,11 +447,19 @@ pre code {
   white-space: nowrap;
 }
 
+/* ===== Picture Element ===== */
+picture { display: block; }
+picture img { display: block; }
+
 /* ===== Photo Layouts ===== */
-.photo-full-bleed {
+picture:has(.photo-full-bleed) {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
+}
+
+.photo-full-bleed {
+  width: 100%;
 }
 
 .photo-centered {
@@ -607,16 +615,21 @@ pre code {
   margin-right: -50vw;
 }
 
-.still-image {
+.still-image-container picture {
   width: 80%;
   max-width: 80vw;
+  margin: 0 auto;
+}
+
+.still-image {
+  width: 100%;
   height: auto;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 640px) {
-  .still-image {
+  .still-image-container picture {
     width: 95%;
     max-width: 95vw;
   }
@@ -643,16 +656,21 @@ pre code {
   margin-right: -50vw;
 }
 
-.still-content img {
+.still-content picture {
   width: 80%;
   max-width: 80vw;
+  margin: 0 auto;
+}
+
+.still-content img {
+  width: 100%;
   height: auto;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 640px) {
-  .still-content img {
+  .still-content picture {
     width: 95%;
     max-width: 95vw;
   }
