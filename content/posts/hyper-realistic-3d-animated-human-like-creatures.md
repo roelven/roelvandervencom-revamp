@@ -5,6 +5,9 @@ draft: false
 tags: ["animation", "human-like", "uncomfortable"]
 type: article
 slug: "hyper-realistic-3d-animated-human-like-creatures"
+aliases:
+  - /blog/hyper-realistic-3d-animated-human-like-creatures
+  - /blog/hyper-realistic-3d-animated-human-like-creatures/
 ---
 
 Ever since [@marcohamersma](https://twitter.com/marcohamersma) pointed me to [Going to the Store](https://vimeo.com/28501846), I'm hooked on this kind of 3D art. I can't explain why it's so mesmerizing to me, as it makes many other people quite uncomfortable. I was very happy to have found some more lately, and even more so to collect a bunch of those videos here to show you. Here it is, a list of my favorite uncomfortable, hyper-realistic, human-like 3D animations. Be sure to check out the individual artists, because there is much more to be discovered that will keep you watching for a while longer!

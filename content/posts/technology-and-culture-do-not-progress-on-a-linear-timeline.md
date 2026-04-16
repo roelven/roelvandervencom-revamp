@@ -5,6 +5,9 @@ draft: false
 tags: []
 type: article
 slug: "technology-and-culture-do-not-progress-on-a-linear-timeline"
+aliases:
+  - /blog/technology-and-culture-do-not-progress-on-a-linear-timeline
+  - /blog/technology-and-culture-do-not-progress-on-a-linear-timeline/
 ---
 
 The idea of something being "old-school", "retro" or even "cyberpunk", exists because we attach a feeling of nostalgia to it. I've been fascinated recently by this because culture sometimes reaches back in time to (re) experience something, or at other times might even be ahead of its time!

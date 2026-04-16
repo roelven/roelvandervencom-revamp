@@ -5,6 +5,9 @@ draft: false
 tags: ["global-app-archive", "product-management"]
 type: article
 slug: "free-product-idea-global-app-archive"
+aliases:
+  - /blog/free-product-idea-global-app-archive
+  - /blog/free-product-idea-global-app-archive/
 ---
 
 There is something missing on the internet, but I can't build it myself. Usually I would try to hack something together, but one of my 2018 goals is to not start [any new side projects](https://roelvanderven.com/blog/twenty-nice-a-list-of-29-things-i-learned). Instead, I decided to publish my thoughts here, perhaps someone else will like this free product idea and build it!
